@@ -1,6 +1,6 @@
 require 'rspec/expectations'
 require 'appium_lib'
-require 'cucumber/ast'
+require 'cucumber'
 require 'json'
 require 'base64'
 require 'yaml'
