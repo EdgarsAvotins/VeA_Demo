@@ -17,6 +17,7 @@ options = {
   'app' => '~/Downloads/skype_13.apk',
   'appPackage' => 'com.skype.raider'
 }
+
 desired_capabilities = {
   'deviceName' => options['sn'],
   "platformVersion" => '7.0',

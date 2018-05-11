@@ -1,32 +1,21 @@
-# Then(/^I register$/) do
-#   elements = $driver.find_elements(:xpath, '//*')
-#   elements.each do |el|
-#     p el.text
-#   end
-#   sleep(5)
-#   elements = $driver.find_elements(:xpath, '//*')
-#   elements.each do |el|
-#     p el.text
-#   end
-#   el = $driver.find_element(:id, 'Create Account')
-#   el.click
-#   p Time.now
-#   smth = Time.now
-#   sleep(5)
-#   p Time.now
-#   p Time.now - smth
-#   $driver.find_element(:id, 'asnkdj naskjdn kajsn ')
-# end
-
 Given(/^user inputs a valid email and password$/) do
-  # Sign In
-  # i0116 (email field)
-  # idSIButton9 (next)
-  # i0118 (password field)
-  # idSIButton9 (sign in)
-  # //*[@text='Skip']
+  start_sign_in_button = Elements.new(:id, "Sign In")
+  start_sign_in_button.click
+
+  email_field = Elements.new(:id, 'i0116')
+  email_field.set('vea_demo_user@inbox.lv')
+
+  next_button = Elements.new(:id, 'idSIButton9')
+  next_button.click
+
+  password_field = Elements.new(:id, 'i0118')
+  password_field.set('Parole123')
+
+  finish_sign_in_button = Elements.new(:id, 'idSIButton9')
+  finish_sign_in_button.click
 end
 
-Then(/^user has signed in successfully$/) do
-  # smth
+Then(/^user is signed in and can choose theme$/) do
+  choose_theme_view = Elements.new(:id, 'Choose Your Theme')
+  choose_theme_view.wait_to_be_visible
 end
