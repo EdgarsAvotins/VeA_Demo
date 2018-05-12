@@ -40,6 +40,8 @@ World do
 end
 
 Before do
+  @screens = Screens.new
+  @tests = TestObjects.new(@screens) # we'll access our test_object class through this variable
   $driver.start_driver
   $driver.set_wait(0.1)
   p 'driver started'
